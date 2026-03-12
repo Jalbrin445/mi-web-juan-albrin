@@ -22,5 +22,25 @@ input {
 }
 
 button {
-    width: 100%; padding: 10px; background: #28a745; color: white; border: none; cursor: pointer;
+    width: 100%; 
+    padding: 10px; 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+nav {
+    background: #333;
+    padding: 15px;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration:none;
+    font-weight: bold;
 }

@@ -6,9 +6,9 @@ from werkzeug.security import generate_password_hash, check_password_hash # Esta
 
 app = Flask(__name__) # Instancia de la librería principal 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:' # Para desarrollar la conexión con la base de datos
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:!Jalbrin4405@localhost/proyecto_flask' # Para desarrollar la conexión con la base de datos
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'mi_clave_secrecta'
+app.config['SECRET_KEY'] = 'hola_como_tan_muchachos'
 
 db=SQLAlchemy(app) #Instanciamos para la base de datos pasando como parametro la instancia de la librería principal
 

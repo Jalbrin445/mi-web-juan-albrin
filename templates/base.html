@@ -7,9 +7,22 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
+    <nav>
+        <a href="{{url_for('inicio')}}">Inicio</a>
+        <a href="{{url_for('login')}}">Login</a>
+        <a href="{{url_for('inicio')}}">Registro</a>
+    </nav>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <main class="container">
         {% block content %}
-    
+        
         {% endblock %}
     </main>
 </body>
