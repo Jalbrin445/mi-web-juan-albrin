@@ -42,7 +42,7 @@ mi-web-juan-albrin
 4. Instalar dependencias:
 
     En CMD:
-        pip install -r requirements.txt
+        pip install -r requerimientos.txt
 
 
 **NOTA:** Proximamente se actualizarán todos las dependencias según necesidades del proyecto.
