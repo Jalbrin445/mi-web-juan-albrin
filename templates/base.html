@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
+
+    <!--
+    Esta es la plantilla base, la cual se relaciona con dos plantillas: login.html y registro.html, además, se enlaza utilizando url_for a los archivos HTML y CSS
+    Adicionalmente, también maneja los mensajes que son enviados por la función flash() son renderizados usando jinja2 como lo podemos ver más abajo
+    -->
     <nav>
         <a href="{{url_for('inicio')}}">Inicio</a>
         <a href="{{url_for('login')}}">Login</a>

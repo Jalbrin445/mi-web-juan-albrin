@@ -2,6 +2,13 @@
 
 {% block content %}
 
+    <!--
+    En este formulario se le pide al usuario dos campos (Correo Electrónico y Contraseña).
+    Además, esta compuesto por: 
+        1. Dos campos en el formulario con su respectivo tipo.
+        2. Botón de tipo submit el cual gracias al método HTTP POST se envian al "backend"
+        3. Un enlace que redirecciona al usuario a la pantalla de registro.
+    -->
     <h2>Iniciar Sesión</h2>
     <form action="/login" method="POST">
         <div>

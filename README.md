@@ -42,7 +42,10 @@ mi-web-juan-albrin
 4. Instalar dependencias:
 
     En CMD:
-        pip install flask flask-sqlalchemy mysqlclient
+        pip install -r requirements.txt
+
+
+**NOTA:** Proximamente se actualizarán todos las dependencias según necesidades del proyecto.
 
 
         

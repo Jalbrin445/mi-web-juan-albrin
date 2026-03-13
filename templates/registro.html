@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <!-- Este formulario sirve para registrar un nuevo usuario, el cual se conecta con la plantilla base.html
+    Además, en este formulario se puede encontrar:
 
+        1. Tres campos obligatorios, nombre de usuario, correo electrónico y contraseña, cada uno con su respectivo tipo de datos
+        2. Un botón de tipo submit que envia los datos, además, el método HTTP principal es POST
+        3. Tiene un link que redirecciona al usuario a la pantalla de inicio de sesión.
+    -->
     <h2>Registrate</h2>
     <form action="/registro" method="POST">
         <div>
