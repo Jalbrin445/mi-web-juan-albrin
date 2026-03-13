@@ -12,18 +12,6 @@
         <a href="{{url_for('login')}}">Login</a>
         <a href="{{url_for('registro')}}">Registro</a>
     </nav>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p style="color:red">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <main class="container">
-        {% block content %}
-        
-        {% endblock %}
-    </main>
+    <h1>Bienvenidos SEAN TODOS</h1>
 </body>
 </html>

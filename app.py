@@ -28,7 +28,46 @@ class Usuario(db.Model):
     def __repr__(self):
         return f'<Usuerio {self.username}>'
 
+# Función utilizada para
 @app.route('/')
 def inicio():
-    return render_template('base.html')
+    return render_template('bienvenida.html')
+
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'POST':
+        nombre = request.form.get('username')
+        correo = request.form.get('email')
+        password = request.form.get('password')
+
+        if Usuario.query.filter_by(email=correo).first():
+            flash('El correo ya existe.')
+            return redirect(url_for('registro'))
+        
+        pw_hash = generate_password_hash(password)
+        nuevo_user = Usuario(username=nombre,email=correo, password_hash=pw_hash)
+        db.session.add(nuevo_user)
+        db.session.commit()
+
+        flash('¡Registro exitoso! Ya puedes ingresar')
+        return redirect(url_for('login'))
+    return render_template('registro.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        correo = request.form.get('email')
+        password = request.form.get('password')
+        user = Usuario.query.filter_by(email=correo).first()
+
+        if user and check_password_hash(user.password_hash, password):
+            return f"<h1>Bienvenido, {user.username} </h1><a href='/'>Volver</a>"
+        
+        flash('Correo o contraseña incorrectos')
+    return render_template('login.html')
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
 
